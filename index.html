@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+     <link rel="stylesheet" href="./bulma.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <title>Free Image filter</title>
+    
+</head>
+<body>
+    
+<nav class="navbar is-spaced has-shadow">
+    <div class="navbar-brand is-size-3 has-text-weight-bold " style="color: #0366f8;">
+        Free Image Filter
+    </div>
+
+
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <a href="https://github.com/DevAthul-88"  target="_blank" class="button" style="outline: none ;">
+                <i class="fab fa-github fa-2x"></i>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<section class="section">
+    <input type="file" class='input' id="upload">
+
+
+    <canvas id="canvas" class="mt-3 image is-size-128x128"></canvas>
+
+    <h2 class="has-text-centered mt-5 is-size-3 has-text-weight-bold " style="color: #0366f8;">Filters</h2>
+
+    
+ <div class=" mt-5">
+    <div class="is-flex is-flex-wrap-wrap">
+        
+        <div class="numbers is-flex flex-wrap ">
+            <span class="minus button brightness-remove filter-btn">-</span>
+            <input type="text" class='input has-text-centered has-text-weight-bold' value="Brightness" disabled style="width:120px; cursor:initial;"/>
+            <span class="plus button brightness-add filter-btn">+</span>
+        </div>
+
+        <div class="numbers ml-4 is-flex flex-wrap ">
+            <span class="minus button contrast-remove filter-btn">-</span>
+            <input type="text" class='input has-text-centered has-text-weight-bold' value="Contrast" disabled style="width:120px; cursor:initial;"/>
+            <span class="plus button contrast-add filter-btn">+</span>
+        </div>
+
+
+        <div class="numbers ml-4 is-flex flex-wrap ">
+            <span class="minus button saturation-remove filter-btn">-</span>
+            <input type="text" class='input has-text-centered has-text-weight-bold' value="Saturation" disabled style="width:120px; cursor:initial;"/>
+            <span class="plus button saturation-add filter-btn">+</span>
+        </div>
+
+        <div class="numbers ml-4 is-flex flex-wrap ">
+            <span class="minus button vibrance-remove filter-btn">-</span>
+            <input type="text" class='input has-text-centered has-text-weight-bold' value="Vibrance" disabled style="width:120px; cursor:initial;"/>
+            <span class="plus button vibrance-add filter-btn">+</span>
+        </div>
+
+
+        <div class="numbers ml-4 is-flex flex-wrap ">
+            <span class="minus button exposure-remove filter-btn">-</span>
+            <input type="text" class='input has-text-centered has-text-weight-bold' value="Exposure" disabled style="width:120px; cursor:initial;"/>
+            <span class="plus button exposure-add filter-btn">+</span>
+        </div>
+
+
+        <div class="numbers ml-4 is-flex flex-wrap ">
+            <span class="minus button hue-remove filter-btn">-</span>
+            <input type="text" class='input has-text-centered has-text-weight-bold' value="Hue" disabled style="width:120px; cursor:initial;"/>
+            <span class="plus button hue-add filter-btn">+</span>
+        </div>
+
+        <div class="numbers ml-4 is-flex flex-wrap ">
+            <span class="minus button sepia-remove filter-btn">-</span>
+            <input type="text" class='input has-text-centered has-text-weight-bold' value="Sepia" disabled style="width:120px; cursor:initial;"/>
+            <span class="plus button sepia-add filter-btn">+</span>
+        </div>
+
+
+    
+
+
+        <div class="numbers ml-4 is-flex flex-wrap ">
+            <span class="minus button noise-remove filter-btn">-</span>
+            <input type="text" class='input has-text-centered has-text-weight-bold' value="Noise" disabled style="width:120px; cursor:initial;"/>
+            <span class="plus button noise-add filter-btn">+</span>
+        </div>
+
+
+        <div class="numbers ml-4 is-flex flex-wrap ">
+            <span class="minus button clip-remove filter-btn">-</span>
+            <input type="text" class='input has-text-centered has-text-weight-bold' value="Clip" disabled style="width:120px; cursor:initial;"/>
+            <span class="plus button clip-add filter-btn">+</span>
+        </div>
+
+        <div class="numbers ml-4 is-flex flex-wrap ">
+            <span class="minus button stackBlur-remove filter-btn">-</span>
+            <input type="text" class='input has-text-centered has-text-weight-bold' value="StackBlur" disabled style="width:120px; cursor:initial;"/>
+            <span class="plus button stackBlur-add filter-btn">+</span>
+        </div>
+
+
+
+        <div class="numbers ml-4 is-flex flex-wrap ">
+            <span class="minus button sharpen-remove filter-btn">-</span>
+            <input type="text" class='input has-text-centered has-text-weight-bold' value="Sharpen" disabled style="width:120px; cursor:initial;"/>
+            <span class="plus button sharpen-add filter-btn">+</span>
+        </div>
+      
+    </div>
+
+    
+
+ </div>
+
+
+
+
+
+
+<hr>
+    <h2 class="has-text-centered  is-size-3 has-text-weight-bold " style="color: #0366f8;">Present</h2>
+    <div class="buttons is-flex flex-wrap is-grouped mt-4">
+        
+            <button class='button is-small vintage-add filter-btn' id="blue">
+                Vintage
+            </button>
+
+            <button class='button lomo-add filter-btn' id="blue">
+                Lomo
+            </button>
+
+            <button class='button clarity-add filter-btn' id="blue">
+                Clarity
+            </button>
+
+            <button class='button sin-add filter-btn' id="blue">
+                Sin City
+            </button>
+
+            <button class='button sunrise-add filter-btn' id="blue">
+               Sunrise
+            </button>
+
+            <button class='button cross-add filter-btn' id="blue">
+                Cross Process
+             </button>
+
+             <button class='button orange-add filter-btn' id="blue">
+                Orange Peel
+             </button>
+
+             <button class='button love-add filter-btn' id="blue">
+                Love
+             </button>
+
+             <button class='button grungy-add filter-btn' id="blue">
+                Grungy
+             </button>
+
+             <button class='button jarques-add filter-btn' id="blue">
+                Jarques
+             </button>
+
+             <button class='button pinhole-add filter-btn' id="blue">
+                Pinhole
+             </button>
+
+             <button class='button old-add filter-btn' id="blue">
+                Old Boot
+             </button>
+
+             <button class='button glowing-add filter-btn' id="blue">
+                Glowing Sun
+             </button>
+
+             <button class='button days-add filter-btn' id="blue">
+                Hazy Days
+             </button>
+
+             <button class='button her-add filter-btn' id="blue">
+                Her Majesty
+             </button>
+
+             <button class='button nostalgia-add filter-btn' id="blue">
+                Nostalgia
+             </button>
+
+             <button class='button hemingway-add filter-btn' id="blue">
+                Hemingway
+             </button>
+
+             <button class='button concentrate-add filter-btn' id="blue">
+                Concentrate
+             </button>
+    
+    </div>
+
+    <hr>
+
+    <div class="columns  is-flex">
+        <button class='button is-fullwidth is-primary is-light' id="download-btn">
+            <strong>Download Image</strong>
+        </button>
+        <button class='button is-block is-fullwidth is-danger is-light ml-3' id="clear-btn">
+            <strong>Clear Effects</strong>
+        </button>
+    </div>
+</section>
+
+<script src="./caman.full.js"></script>
+<script src="./script.js"></script>
+</body>
+</html>
